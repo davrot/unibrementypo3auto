@@ -1,0 +1,7 @@
+{
+    "login_url": "/typo3/index.php?route=%2Flogin",
+    "user_name_id": "t3-username",
+    "user_password_id": "t3-password",
+    "user_button_id": "t3-login-submit",
+    "bad_url": "/typo3/index.php?loginProvider="
+}
