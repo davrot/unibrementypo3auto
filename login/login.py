@@ -56,6 +56,7 @@ def login(
         login_password.clear()
         login_name.send_keys(zfn_user)
         login_password.send_keys(zfn_password)
+        time.sleep(1)
 
     login_button.click()
     while driver.current_url == login_url:
