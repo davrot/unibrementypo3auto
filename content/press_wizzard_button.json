@@ -1,0 +1,5 @@
+{
+    "wizard_button": "Toggle Drag In Wizard",
+    "wizard_button_close": "t3js-modal-close close",
+    "wizard_open": "new-element-drag-in-wizard"
+}
