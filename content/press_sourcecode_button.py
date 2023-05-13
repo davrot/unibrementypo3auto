@@ -15,5 +15,11 @@ def press_sourcecode_button(driver: webdriver.firefox.webdriver.WebDriver):
     for i in found_element_list:
         temp_str = str(i.get_dom_attribute("title"))
         if temp_str.find(string_dict["lable_for_source_code_button"]) != -1:
-            i.click()
+            while (
+                str(i.get_dom_attribute("class")).find(
+                    string_dict["end_state_button_class"]
+                )
+                == -1
+            ):
+                i.click()
             break
