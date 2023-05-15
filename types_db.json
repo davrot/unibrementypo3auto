@@ -1,0 +1,27 @@
+{
+    "article": [
+        [],
+        "Artikel",
+        "Article"
+    ],
+    "book": [
+        [],
+        "Buch",
+        "Book"
+    ],
+    "incollection": [
+        [],
+        "Sammlung",
+        "Collection"
+    ],
+    "inproceedings": [
+        [],
+        "Konferenzbeitrag",
+        "Conferences"
+    ],
+    "misc": [
+        [],
+        "Verschiedenes",
+        "Miscellaneous"
+    ]
+}
