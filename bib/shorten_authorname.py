@@ -1,4 +1,12 @@
+import html
+
+
+def filter_string(input):
+    return str(html.escape(input).encode("ascii", "xmlcharrefreplace").decode())
+
+
 def shorten_authorname(input: str) -> str:
+    input = filter_string(input)
     temp = input.split(",")
     name: str = temp[0].lstrip().rstrip() + str(",")
     temp = temp[1].lstrip().rstrip().split(" ")
