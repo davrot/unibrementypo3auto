@@ -26,6 +26,10 @@ Running this program produces (or updates) two databases:
 * authors_db.json : Containing the list of the authors.
 
 If you want to remove an entry from these databases, you need to delete it yourself. 
+If you want to use another bib filename, you need to change it in 1_bib_make_types_and_authors_database.py under 
+```
+filename_bib: str = "neuro.bib"
+```
 
 ### types_db.json 
 
