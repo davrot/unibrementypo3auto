@@ -11,6 +11,8 @@ from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 from content.change_url import change_url
 from content.get_drop_targets import get_drop_targets
+from content.make_drop_map import make_drop_map
+
 
 page_id: int = 59492
 base_url: str = "https://www.uni-bremen.de"
@@ -44,6 +46,10 @@ center_x, center_y, id_name = get_drop_targets(driver)
 for i in range(0, len(id_name)):
     print(f"{id_name[i]} => ({center_x[i]}, {center_y[i]})")
 
+
+organization_matrix = make_drop_map(center_x, center_y)
+print("How the drop points are organized: (-1 => Empty)")
+print(organization_matrix)
 
 print("Close shop")
 driver.close()
