@@ -30,9 +30,32 @@ If you want to remove an entry from these databases, you need to delete it yours
 ### types_db.json 
 
 An entry looks like this:
-'''
+```
 "article": [[], "article", "article"]
-'''
+```
+Beside the key, there are three components. 
+1. An list with alternative keys. In the case we want to fuse several keys into one category. 
+2. The German headline
+3. The English headline
+
+Thus we want to change it into:
+```
+"article": [[], "Artikel", "Article"]
+```
+### authors_db.json 
+
+An entry looks like this:
+```
+"Pawelzik, K.": [],
+```
+The key is later used for generating the author name in the html lists. Again a list with alternative author names follows.
+
+Since this entry is wrong, we fix it by:
+```
+"Pawelzik, K. R.": ["Pawelzik, K."],
+```
+
+
 
 
 
