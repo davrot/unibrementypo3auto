@@ -58,7 +58,10 @@ Since this entry is wrong, we fix it by:
 ```
 "Pawelzik, K. R.": ["Pawelzik, K."],
 ```
+# make_typo3_publication_template.py
 
+This program builds a template for the presentation of the bibliographie on a given page id. Change page_id: int = 59585 accordingly.
+It uses the information from the types_db.json.
 
 
 
