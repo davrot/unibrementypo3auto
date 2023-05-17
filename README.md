@@ -63,6 +63,9 @@ Since this entry is wrong, we fix it by:
 This program builds a template for the presentation of the bibliographie on a given page id. Change page_id: int = 59585 accordingly.
 It uses the information from the types_db.json.
 
+# fix_english_publication_headers.py
+
+After creating the page section with the template and a (manual) typo3 translation process, the headers are still in German. fix_english_publication_headers.py uses the types_db.json to fix the english headers.
 
 
 
