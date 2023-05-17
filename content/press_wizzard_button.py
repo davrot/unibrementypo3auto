@@ -28,15 +28,18 @@ def press_wizzard_button(driver: webdriver.firefox.webdriver.WebDriver):
                 break
 
         time.sleep(2)
-        found_element_list = ["not empty"]  # type: ignore
+        found_element_list: list = ["not empty"]  # type: ignore
         while len(found_element_list) > 0:
             found_element_list = driver.find_elements(By.TAG_NAME, "button")
             for i in found_element_list:
                 temp_str = str(i.get_dom_attribute("class"))
+
                 if temp_str.find(string_dict["wizard_button_close"]) != -1:
                     i.click()
+                    found_element_list = ["not empty"]  # type: ignore
                     break
             time.sleep(1)
+            found_element_list = []
 
         found_element_list = driver.find_elements(By.TAG_NAME, "div")
         for i in found_element_list:
