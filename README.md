@@ -67,7 +67,11 @@ It uses the information from the types_db.json.
 
 After creating the page section with the template and a (manual) typo3 translation process, the headers are still in German. fix_english_publication_headers.py uses the types_db.json to fix the english headers.
 
+# 2_bib_fill_pages.py
 
-
-
-
+Updates all the pages listed in the user_pages.json as keys. 
+```
+    "59576": "",
+    "59492": "Rotermund, D.",
+```
+In the json file you have the options to add a filter string for the author if this page should only list the publications of one user. If the string is empty then all authors will be used. 
