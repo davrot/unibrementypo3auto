@@ -55,6 +55,8 @@ def main(
 
     # ###########################################################
     # Make outer grid
+    # ###########################################################
+
     scroll_down_content_page(driver)
     x_from, y_from = get_xy_singlegrid(driver)
     center_x, center_y, _ = get_drop_targets(driver)
@@ -68,8 +70,9 @@ def main(
     time.sleep(1)
 
     # ###########################################################
-
     # Make tab
+    # ###########################################################
+
     scroll_down_content_page(driver)
     x_from, y_from = get_xy_tab(driver)
     center_x, center_y, _ = get_drop_targets(driver)
@@ -82,6 +85,8 @@ def main(
     action_chain_drag_and_drop(driver, x_from, y_from, center_x[id], center_y[id])
     time.sleep(1)
 
+    # ###########################################################
+    # Make textmedia elements
     # ###########################################################
 
     with open("types_db.json", "r") as file:
@@ -103,10 +108,17 @@ def main(
         idx = np.where(temp >= 0)[0]
         id = temp[idx][0]
         action_chain_drag_and_drop(driver, x_from, y_from, center_x[id], center_y[id])
-        time.sleep(1)
-        content_id_post, content_type, urls = get_content_list(driver)
-        new_item_list = list(set(content_id_post) - set(content_id_pre))
-        assert len(new_item_list) == 1
+        time.sleep(2)
+
+        the_length: int = 0
+        while the_length == 0:
+            content_id_post, content_type, urls = get_content_list(driver)
+            new_item_list = list(set(content_id_post) - set(content_id_pre))
+            the_length = len(new_item_list) == 1
+            if the_length != 1:
+                time.sleep(1)
+                print(".")
+
         idx_id: int = content_id_post.index(new_item_list[0])
         assert content_type[idx_id] == "textmedia"
         change_url(driver, base_url + urls[idx_id])
@@ -126,7 +138,7 @@ def main(
     # ###########################################################
 
 
-page_id: int = 59581
+page_id: int = 59285
 base_url: str = "https://www.uni-bremen.de"
 
 zfn_password: str = getpass()
