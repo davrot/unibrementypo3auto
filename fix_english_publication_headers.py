@@ -20,7 +20,7 @@ from content.press_save_button import press_save_button
 
 import time
 
-page_id: int = 59589
+page_id: int = 59285
 base_url: str = "https://www.uni-bremen.de"
 
 zfn_password: str = getpass()
@@ -49,6 +49,7 @@ page_url_base = get_layout_url(driver, base_url)
 print(f"Go to page {int(page_id)}")
 page_url: str = page_url_base + f"&id={int(page_id)}"
 driver.get(page_url)
+time.sleep(1)
 
 # Get content from page
 content_id, content_type, urls = get_content_list(driver)
@@ -58,6 +59,7 @@ for i in range(0, len(content_type)):
     if content_type[i] == "textmedia":
         interesting_content_ids.append(content_id[i])
 
+time.sleep(1)
 english_ids: list = []
 for id in interesting_content_ids:
     if is_english_content(driver, id) is True:
