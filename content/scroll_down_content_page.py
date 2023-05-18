@@ -31,10 +31,6 @@ def scroll_down_content_page(driver: webdriver.firefox.webdriver.WebDriver):
     # start_x = found_element.location["x"]
     start_y = found_element.location["y"]
 
-    print(start_y)
-    print(final_y)
-    print(max_height_per_step)
-    print("----")
     to_scroll = final_y - start_y
     try:
         if to_scroll > 0:
