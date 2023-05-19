@@ -80,4 +80,4 @@ In the json file you have the options to add a filter string for the author if t
 
 This is an additional tool to convert a Python file into a syntax hightlighted html source code segment for the CK Editor in the University of Bremen typo3 system. It uses pygments (pip install pygments) and argh (pip install argh). The commandline parameter to this program is the py-filename you want to process.  
 
-An important note: Press the source code button in the CK Editor, then copy the code segment in and save. If you toggle the source code button then it destroys all the <br> html tags. 
+An important note: Press the source code button in the CK Editor, then copy the code segment in and save. If you toggle the source code button then it destroys all the br (i.e. new-line) html tags. 
