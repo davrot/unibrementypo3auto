@@ -75,3 +75,7 @@ Updates all the pages listed in the user_pages.json as keys.
     "59492": "Rotermund, D.",
 ```
 In the json file you have the options to add a filter string for the author if this page should only list the publications of one user. If the string is empty then all authors will be used. 
+
+# python_code_highlighter.py
+
+This is an additional tool to convert a Python file into a syntax hightlighted html source code segment for the CK Editor in the University of Bremen typo3 system. It uses pygments (pip install pygments) and argh (pip install argh). The commandline parameter to this program is the py-filename you want to process.  
